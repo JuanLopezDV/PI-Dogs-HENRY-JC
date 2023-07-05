@@ -1,23 +1,17 @@
 import React from "react";
-import axios from "axios";
+import { useDispatch } from "react-redux";
+import { searchDogs } from "../../redux/actions";
 
 function SearchBar() {
   const [raza, setRaza] = React.useState("");
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
     setRaza(event.target.value);
   };
 
-  const onSearch = async (text) => {
-    try {
-      console.log(`${process.env.REACT_APP_API_URL}/dogs?name=${text}`);
-      const { data } = await axios(
-        `${process.env.REACT_APP_API_URL}/dogs?name=${text}`
-      );
-      console.log(data);
-    } catch (error) {
-      console.log(error.message);
-    }
+  const onSearch = (text) => {
+    dispatch(searchDogs(text));
   };
 
   return (
