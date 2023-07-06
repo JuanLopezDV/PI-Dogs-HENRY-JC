@@ -5,6 +5,7 @@ import {
   SEARCH_DOGS,
   FILTER_DOGS,
   CLEAR_FILTERS,
+  ORDER_BY,
 } from "./actions";
 
 const initialState = {
@@ -36,6 +37,12 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case FILTER_DOGS:
+      return {
+        ...state,
+        filteredDogs: [...action.payload],
+      };
+
+    case ORDER_BY:
       return {
         ...state,
         filteredDogs: [...action.payload],

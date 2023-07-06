@@ -6,6 +6,7 @@ const SEARCH_DOGS = "SEARCH_DOGS";
 const ERRORS = "ERRORS";
 const FILTER_DOGS = "FILTER_DOGS";
 const CLEAR_FILTERS = "CLEAR_FILTERS";
+const ORDER_BY = "ORDER_BY";
 
 const addDogs = () => {
   const endpoint = `${process.env.REACT_APP_API_URL}/dogs`;
@@ -70,10 +71,27 @@ const searchDogs = (query) => {
 const filterDogs = (data) => {
   return (dispatch) => {
     return dispatch({
-      type: SEARCH_DOGS,
+      type: FILTER_DOGS,
       payload: data,
     });
   };
+};
+
+const orderDogs = (data) => {
+  if (!!data) {
+    return (dispatch) => {
+      return dispatch({
+        type: ORDER_BY,
+        payload: data,
+      });
+    };
+  } else {
+    return (dispatch) => {
+      return dispatch({
+        type: "",
+      });
+    };
+  }
 };
 
 const clearFilters = () => {
@@ -91,10 +109,12 @@ export {
   SEARCH_DOGS,
   FILTER_DOGS,
   CLEAR_FILTERS,
+  ORDER_BY,
   ERRORS,
   addDogs,
   addTemperaments,
   searchDogs,
   filterDogs,
   clearFilters,
+  orderDogs,
 };
