@@ -1,9 +1,10 @@
 import React from "react";
+import { FormDogs } from "../FormDogs";
 
 function NewDog() {
   return (
     <>
-      <h1>New Dog</h1>
+      <FormDogs />
     </>
   );
 }
