@@ -1,44 +1,71 @@
 const regexNumber = /^\d+(\.\d+)?$/;
 
+const validateNumericValue = (value, fieldName) => {
+  if (!regexNumber.test(Number(value)) || !(value === 0)) {
+    return `Ingrese solo valores numéricos en ${fieldName}`;
+  }
+  return null;
+};
+
 const validation = (object) => {
   const errors = {};
-  //name
+
+  // Name
   if (!object.name) {
     errors.name = "Digite un nombre para la raza";
   }
 
-  //Height
-  if (!regexNumber.test(Number(object.minHeight))) {
-    errors.minHeight = "Ingrese solo valores numéricos";
+  // Height
+  const minHeightError = validateNumericValue(object.minHeight, "minHeight");
+  if (minHeightError) {
+    errors.minHeight = minHeightError;
   }
-  if (!regexNumber.test(Number(object.maxHeight))) {
-    errors.maxHeight = "Ingrese solo valores numéricos";
+
+  const maxHeightError = validateNumericValue(object.maxHeight, "maxHeight");
+  if (maxHeightError) {
+    errors.maxHeight = maxHeightError;
   }
+
   if (Number(object.minHeight) >= Number(object.maxHeight)) {
     errors.height = "La altura mínima debe ser menor a la altura máxima";
   }
 
-  //Weight
-  if (!regexNumber.test(Number(object.minWeight))) {
-    errors.minWeight = "Ingrese solo valores numéricos";
+  // Weight
+  const minWeightError = validateNumericValue(object.minWeight, "minWeight");
+  if (minWeightError) {
+    errors.minWeight = minWeightError;
   }
-  if (!regexNumber.test(Number(object.maxWeight))) {
-    errors.maxWeight = "Ingrese solo valores numéricos";
+
+  const maxWeightError = validateNumericValue(object.maxWeight, "maxWeight");
+  if (maxWeightError) {
+    errors.maxWeight = maxWeightError;
   }
+
   if (Number(object.minWeight) >= Number(object.maxWeight)) {
     errors.weight = "El peso mínimo debe ser menor al peso máximo";
   }
 
-  //LifeSpan
-  if (!regexNumber.test(Number(object.minLifeSpan))) {
-    errors.minLifeSpan = "Ingrese solo valores numéricos";
+  // LifeSpan
+  const minLifeSpanError = validateNumericValue(
+    object.minLifeSpan,
+    "minLifeSpan"
+  );
+  if (minLifeSpanError) {
+    errors.minLifeSpan = minLifeSpanError;
   }
-  if (!regexNumber.test(Number(object.maxLifeSpan))) {
-    errors.maxLifeSpan = "Ingrese solo valores numéricos";
+
+  const maxLifeSpanError = validateNumericValue(
+    object.maxLifeSpan,
+    "maxLifeSpan"
+  );
+  if (maxLifeSpanError) {
+    errors.maxLifeSpan = maxLifeSpanError;
   }
+
   if (Number(object.minLifeSpan) >= Number(object.maxLifeSpan)) {
     errors.lifeSpan = "La edad mínima debe ser menor a la edad máxima";
   }
+
   return errors;
 };
 

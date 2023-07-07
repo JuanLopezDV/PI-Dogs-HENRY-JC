@@ -1,8 +1,12 @@
 import React from "react";
 import { validation } from "../../functions/validationForm";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { FilterButton } from "../FilterButton";
+import { addTemperaments } from "../../redux/actions";
 
 function FormDogs() {
+  const dispatch = useDispatch();
   const [newDog, setNewDog] = React.useState({
     name: "",
     image: "",
@@ -17,6 +21,14 @@ function FormDogs() {
 
   const [errors, setErrors] = React.useState({});
 
+  React.useEffect(() => {
+    setErrors(validation(newDog));
+    dispatch(addTemperaments());
+  }, []);
+
+  const temperaments = useSelector((state) => state.allTemperaments);
+  console.log(temperaments);
+
   const handleChange = (event) => {
     const property = event.target.name;
     const value = event.target.value;
@@ -24,12 +36,12 @@ function FormDogs() {
   };
 
   const handleSubmit = async (event) => {
-    try {
-      event.preventDefault();
-      setErrors(validation(newDog));
+    event.preventDefault();
+    setErrors({ ...errors, sending: true });
 
+    try {
       if (!!Object.keys(errors).length) {
-        return errors;
+        return null;
       } else {
         const endpoint = `${process.env.REACT_APP_API_URL}/dogs`;
         const formDog = {
@@ -48,15 +60,8 @@ function FormDogs() {
         console.log(data);
       }
     } catch (error) {
-      console.error("Error al enviar la solicitud:", error);
+      console.error("Error al enviar la solicitud:", error.response.data);
     }
-
-    // const formDog = {
-    //   name: "Perro 3 Astoy",
-    // };
-
-    // setNewDog(formDog);
-    // console.log(formDog);
   };
 
   return (
@@ -70,6 +75,12 @@ function FormDogs() {
           placeholder="Ingresa el nombre de la nueva raza"
           onChange={handleChange}
         />
+
+        {errors.sending && Object.keys(errors).length ? (
+          <span>{errors.name}</span>
+        ) : (
+          false
+        )}
 
         <label htmlFor="height">Altura:</label>
         <input
@@ -128,6 +139,14 @@ function FormDogs() {
           onChange={handleChange}
         />
         <label htmlFor="temperament">Temperamento:</label>
+        {temperaments.map((temperament) => (
+          <FilterButton
+            key={temperament.id}
+            name={temperament.name}
+            source={"temp"}
+          />
+        ))}
+
         <button type="submit">Crear raza de perro</button>
       </form>
     </>

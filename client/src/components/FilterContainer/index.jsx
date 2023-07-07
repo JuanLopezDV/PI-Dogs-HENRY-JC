@@ -29,7 +29,7 @@ function FilterContainer() {
     <div className="Container Container-wrapper">
       <div className="Container-dropdown">
         {filters.map((type, i) => (
-          <div className="Container-type">
+          <div key={type.source} className="Container-type">
             <div className="Container-type-tittle" onClick={() => toggle(i)}>
               <h2>{type.title}</h2>
               <span>{selected === i ? "-" : "+"}</span>
