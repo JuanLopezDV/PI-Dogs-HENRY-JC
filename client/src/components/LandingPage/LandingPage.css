@@ -1,0 +1,148 @@
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.hero {
+  background-color: #3c95a8;
+  color: #fff;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  grid-template-areas: "nav" "content";
+  min-height: 100vh;
+}
+
+.nav {
+  grid-area: nav;
+  display: grid;
+  justify-content: space-between;
+  grid-auto-flow: column;
+  gap: 1em;
+  align-items: center;
+  height: 90px;
+}
+
+.nav-menu {
+  display: none;
+}
+
+.nav-list {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-logo {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.nav-menu {
+  width: 30px;
+}
+
+.hero-main {
+  grid-area: content;
+  display: grid;
+  gap: 2em;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  z-index: 1;
+  padding-bottom: 100px;
+}
+
+.hero-waves {
+  grid-area: content;
+  align-self: end;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  letter-spacing: 1.5px;
+}
+
+.hero-description {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 300px;
+}
+
+.hero-picture {
+  position: relative;
+  margin: 0 auto;
+}
+
+.hero-image {
+  max-width: 250px;
+  min-width: 230px;
+  filter: drop-shadow(3px 3px 7px #00000093);
+}
+.hero-bg-image {
+  width: 350px;
+  height: 300px;
+  position: absolute;
+  right: -20%;
+  top: -5%;
+  fill: #f3b800;
+}
+
+.btn-api-dogs {
+  color: #f3b800;
+  padding: 12px 60px;
+  border: 0px solid #fff;
+  border-radius: 10px;
+  background-color: #fff;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.btn-api-dogs:hover {
+  color: #3c95a8;
+}
+
+@media (max-width: 698px) {
+  .nav-list {
+    display: none;
+  }
+
+  .nav-menu {
+    display: block;
+  }
+
+  .hero-main {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .hero-picture {
+    grid-row: 1/2;
+  }
+
+  .hero-image {
+    max-width: 250px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.huella {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 1%;
+  z-index: 1;
+}
