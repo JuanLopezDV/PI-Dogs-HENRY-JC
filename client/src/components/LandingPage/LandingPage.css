@@ -36,12 +36,21 @@
 }
 
 .nav-link {
-  color: #fff;
+  color: #7b3a43;
   text-decoration: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 100vmax;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background-color: #7b3a43;
+  transition: background-color 100ms linear;
 }
 
 .nav-logo {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-weight: 300;
 }
 

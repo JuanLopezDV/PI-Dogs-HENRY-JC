@@ -1,0 +1,23 @@
+.dogs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 620px) {
+  .dogs {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 930px) {
+  .dogs {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .dogs {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

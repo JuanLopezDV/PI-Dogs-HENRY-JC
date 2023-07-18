@@ -18,12 +18,17 @@ function Home() {
 
   return (
     <>
-      <h1>Home page</h1>
-      <SearchBar />
-      <OrderBy />
+      <main>
+        <h1>Home page</h1>
+        <SearchBar />
+        <OrderBy />
 
-      {!!dogs.length ? <CardsDogs dogs={dogs} /> : <></>}
-      <FilterContainer />
+        {/* dos columnas */}
+        <div>
+          <FilterContainer />
+        </div>
+        <div>{!!dogs.length ? <CardsDogs dogs={dogs} /> : <></>}</div>
+      </main>
     </>
   );
 }

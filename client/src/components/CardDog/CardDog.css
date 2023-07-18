@@ -1,0 +1,97 @@
+.dog-card {
+  border-radius: 5px;
+  border: solid 2px black;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, 0.25);
+  text-transform: capitalize;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 300px;
+  height: 350px;
+}
+
+.dog-card--image {
+  display: flex;
+  justify-content: center;
+}
+
+.dog-card--image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.dog-card--name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-inline: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.dog-card--info {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 50px;
+  flex-direction: row;
+}
+
+.dog-card--info h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+}
+
+.dog-card .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.dog-card .front {
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 0 5px 10px #000;
+}
+
+.dog-card .back {
+  transform: perspective(600px) rotateY(180deg);
+  background: rgba(27, 136, 199, 0.123);
+
+  color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 5px 10px #000;
+}
+
+.dog-card:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.dog-card:hover .back {
+  transform: perspective(600px) rotateY(360deg);
+}
+
+.dog-card .back h3 {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+.dog-card .back .link {
+  border-top: solid 1px #f3f3f3;
+  height: 50px;
+  line-height: 50px;
+}
+
+.dog-card .back .link a {
+  color: #f3f3f3;
+}
