@@ -6,10 +6,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { CardsDogs } from "../CardsDogs";
 import { FilterContainer } from "../FilterContainer";
 import { OrderBy } from "../OrderBy";
+import { CardDogLoading } from "../CardDogLoading";
+import HomeStyles from "./Home.module.css";
+
+//!Testing objects
+import { dogs } from "../../testing-obj";
 
 function Home() {
   const dispatch = useDispatch();
-  const dogs = useSelector((state) => state.filteredDogs);
+  // !const dogs = useSelector((state) => state.filteredDogs); !!Pruebas
 
   React.useEffect(() => {
     dispatch(addDogs());
@@ -18,16 +23,23 @@ function Home() {
 
   return (
     <>
-      <main>
-        <h1>Home page</h1>
-        <SearchBar />
-        <OrderBy />
+      <main className={HomeStyles["main"]}>
+        <section className={`${HomeStyles["main-section"]}`}>
+          <div></div>
+          <div className={HomeStyles["search-container"]}>
+            <SearchBar />
+            <OrderBy />
+          </div>
+        </section>
 
-        {/* dos columnas */}
-        <div>
-          <FilterContainer />
-        </div>
-        <div>{!!dogs.length ? <CardsDogs dogs={dogs} /> : <></>}</div>
+        <section className={`${HomeStyles["main-section"]}`}>
+          <div className={HomeStyles["section-filter"]}>
+            <FilterContainer />
+          </div>
+          <div className={HomeStyles["section-dogs-page"]}>
+            {!!dogs.length ? <CardsDogs dogs={dogs} /> : <CardDogLoading />}
+          </div>
+        </section>
       </main>
     </>
   );

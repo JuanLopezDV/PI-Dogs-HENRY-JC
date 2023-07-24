@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { orderDogs } from "../../redux/actions";
+import OrderByStyles from "./OrderBy.module.css";
 
 function OrderBy() {
   const dispatch = useDispatch();
@@ -86,20 +87,17 @@ function OrderBy() {
   };
 
   return (
-    <>
-      <label>
-        Ordenar por:
-        <select name="OrderBy" id="OrderBy" onChange={onChange}>
-          <option value="">--Escoge una opción--</option>
+    <div className={OrderByStyles["container-select"]}>
+      <select name="OrderBy" id="OrderBy" onChange={onChange}>
+        <option value="">Ordenar por: </option>
 
-          {orderTypes.map((orderType) => (
-            <option key={orderType.id} value={orderType.id}>
-              {orderType.label}
-            </option>
-          ))}
-        </select>
-      </label>
-    </>
+        {orderTypes.map((orderType) => (
+          <option key={orderType.id} value={orderType.id}>
+            {orderType.label}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 }
 

@@ -7,10 +7,11 @@ import { NewDog } from "../components/NewDog";
 import { Detail } from "../components/Detail";
 import { Nav } from "../components/Nav";
 import { Footer } from "../components/Footer";
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <>
+    <div className={styles.container}>
       {useLocation().pathname === "/" ? <></> : <Nav />}
       <Routes>
         <Route path="/" element={<LandingPage />} />
@@ -19,7 +20,7 @@ function App() {
         <Route path="/new-dog" element={<NewDog />} />
       </Routes>
       {useLocation().pathname === "/" ? <></> : <Footer />}
-    </>
+    </div>
   );
 }
 

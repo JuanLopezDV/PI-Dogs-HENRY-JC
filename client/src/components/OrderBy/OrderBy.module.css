@@ -1,0 +1,41 @@
+.container-select {
+  position: relative;
+  display: flex;
+  width: 400px;
+  min-width: 200px;
+  height: 2rem;
+}
+
+.container-select::after {
+  content: "\25BC";
+  position: absolute;
+  height: 18px;
+  top: 0;
+  right: 0;
+  border-radius: 0 100vh 100vh 0;
+  padding: 8px 10px 8px 10px;
+  background-color: #7e3a42;
+  color: #eae5de;
+  transition: 0.25s all ease;
+  pointer-events: none;
+}
+
+.container-select:hover::after {
+  color: #f98223;
+}
+
+.container-select select {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  appearance: none;
+  outline: 0;
+  border: 2px solid #7e3a42;
+  border-radius: 100vh;
+  box-shadow: none;
+  flex: 1;
+  padding: 1px 1em;
+  height: 34px;
+  color: #7e3a42;
+  background-color: #eae5de;
+  background-image: none;
+  cursor: pointer;
+}

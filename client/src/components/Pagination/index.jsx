@@ -1,4 +1,7 @@
 import React from "react";
+import { ReactComponent as ArrowLeft } from "../../assets/svg/arrow-left.svg";
+import { ReactComponent as ArrowRight } from "../../assets/svg/arrow-right.svg";
+import PaginationStyles from "./Pagination.module.css";
 
 function Pagination({ page, setPage, maxPages }) {
   const [input, setInput] = React.useState(1);
@@ -32,9 +35,16 @@ function Pagination({ page, setPage, maxPages }) {
   };
 
   return (
-    <div>
-      <button disabled={page <= 1} onClick={previousPage}>{`<`}</button>
+    <>
+      <button
+        className={PaginationStyles["pagination-btn"]}
+        disabled={page <= 1}
+        onClick={previousPage}
+      >
+        {<ArrowLeft className={PaginationStyles["icon"]} />}
+      </button>
       <input
+        className={PaginationStyles["pagination-input"]}
         onChange={onInputChange}
         onKeyDown={onInput}
         type="text"
@@ -43,8 +53,14 @@ function Pagination({ page, setPage, maxPages }) {
         value={input}
       />
       <p>de {maxPages}</p>
-      <button disabled={page === maxPages} onClick={nextPage}>{`>`}</button>
-    </div>
+      <button
+        className={PaginationStyles["pagination-btn"]}
+        disabled={page === maxPages}
+        onClick={nextPage}
+      >
+        {<ArrowRight className={PaginationStyles["icon"]} />}
+      </button>
+    </>
   );
 }
 

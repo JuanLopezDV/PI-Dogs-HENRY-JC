@@ -6,8 +6,9 @@
 }
 
 .hero {
-  background-color: #3c95a8;
-  color: #fff;
+  background-color: #f5f3ee;
+  color: #853b46;
+  font-weight: 600;
   display: grid;
   grid-template-rows: max-content 1fr;
   grid-template-areas: "nav" "content";
@@ -50,8 +51,9 @@
 }
 
 .nav-logo {
+  color: #7b3a43;
   font-size: 1.3rem;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .nav-menu {
@@ -76,6 +78,7 @@
 .hero-title {
   font-size: 2.4rem;
   letter-spacing: 1.5px;
+  color: #fe801f;
 }
 
 .hero-description {
@@ -95,21 +98,22 @@
   min-width: 230px;
   filter: drop-shadow(3px 3px 7px #00000093);
 }
+
 .hero-bg-image {
   width: 350px;
   height: 300px;
   position: absolute;
   right: -20%;
   top: -5%;
-  fill: #f3b800;
+  fill: #853b46;
 }
 
 .btn-api-dogs {
-  color: #f3b800;
+  color: #fff;
   padding: 12px 60px;
-  border: 0px solid #fff;
+  border: 1px solid #853b46;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #853b46;
   display: inline-block;
   font-weight: 600;
   font-size: 1.5rem;
@@ -118,7 +122,8 @@
 }
 
 .btn-api-dogs:hover {
-  color: #3c95a8;
+  color: #853b46;
+  background-color: #fff;
 }
 
 @media (max-width: 698px) {

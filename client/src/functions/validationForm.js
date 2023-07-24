@@ -1,29 +1,37 @@
 const regexNumber = /^\d+(\.\d+)?$/;
 
 const validateNumericValue = (value, fieldName) => {
-  if (!regexNumber.test(Number(value)) || !(value === 0)) {
+  if (!regexNumber.test(Number(value))) {
     return `Ingrese solo valores numéricos en ${fieldName}`;
+  } else if (Number(value) === 0) {
+    return `Ingrese solo valores superiores a 0`;
   }
   return null;
 };
 
 const validation = (object) => {
-  const errors = {};
+  let errors = {};
 
   // Name
   if (!object.name) {
     errors.name = "Digite un nombre para la raza";
+  } else {
+    delete errors?.name;
   }
 
   // Height
   const minHeightError = validateNumericValue(object.minHeight, "minHeight");
   if (minHeightError) {
     errors.minHeight = minHeightError;
+  } else {
+    delete errors.minHeight;
   }
 
   const maxHeightError = validateNumericValue(object.maxHeight, "maxHeight");
   if (maxHeightError) {
     errors.maxHeight = maxHeightError;
+  } else {
+    delete errors.maxHeight;
   }
 
   if (Number(object.minHeight) >= Number(object.maxHeight)) {

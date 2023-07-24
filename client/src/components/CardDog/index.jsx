@@ -4,7 +4,6 @@ import "./CardDog.css";
 import { Link } from "react-router-dom";
 
 function CardDog({ id, height, image, life_span, name, temperament, weight }) {
-  console.log(life_span);
   return (
     <div className="dog-card">
       <div className="face front">

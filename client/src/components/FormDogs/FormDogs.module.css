@@ -1,0 +1,115 @@
+* {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+.container-form {
+  border: 1px solid #00000050;
+  height: auto;
+  width: 85%;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 5px;
+  padding-bottom: 1rem;
+}
+
+.container-form div {
+  width: 100%;
+}
+
+.continer-form-dog {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.continer-form-title {
+  text-align: center;
+  margin-bottom: 0.7rem;
+}
+
+.form-input-label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  position: relative;
+  width: 90%;
+  margin-left: 1rem;
+}
+
+.form-input-span {
+  padding-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-input-label input {
+  width: 100%;
+  border: 2px solid #7e3a42;
+  background-color: #eae5de;
+  height: calc(2rem - 4px);
+  border-radius: 100vh 100vh;
+  outline: none;
+  color: #7e3a42;
+  font-size: 0.95rem;
+  padding-left: 1rem;
+}
+
+.form-inputs-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-inputs-container input {
+  width: 45%;
+  border: 2px solid #7e3a42;
+  background-color: #eae5de;
+  height: calc(2rem - 4px);
+  border-radius: 100vh 100vh;
+  outline: none;
+  color: #7e3a42;
+  font-size: 0.95rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.form-input-error {
+  position: absolute;
+  right: 2%;
+  top: 35%;
+  font-size: 0.75rem;
+  color: #f98223;
+  font-weight: 600;
+}
+
+.btn-api-dogs {
+  color: #eae5de;
+  padding: 12px 60px;
+  border: 1px solid #853b46;
+  border-radius: 10px;
+  background-color: #853b46;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+  margin-left: 30%;
+}
+
+.btn-api-dogs:hover {
+  color: #853b46;
+  background-color: #fff;
+}
+
+.container-preview-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-preview-image img {
+  width: 80%;
+  border: 1px solid #00000050;
+}

@@ -12,23 +12,27 @@ function CardsDogs({ dogs }) {
 
   return (
     <>
-      {dogs
-        .slice((page - 1) * numCardsToShow, numCardsToShow * page)
-        .map((dog) => {
-          return (
-            <CardDog
-              key={dog.id}
-              id={dog.id}
-              height={dog.height.metric}
-              image={dog.image}
-              life_span={dog.life_span}
-              name={dog.name}
-              temperament={dog.temperament}
-              weight={dog.weight.metric}
-            />
-          );
-        })}
-      <Pagination page={page} setPage={setPage} maxPages={maxPages} />
+      <section className="section-dogs">
+        {dogs
+          .slice((page - 1) * numCardsToShow, numCardsToShow * page)
+          .map((dog) => {
+            return (
+              <CardDog
+                key={dog.id}
+                id={dog.id}
+                height={dog.height.metric}
+                image={dog.image}
+                life_span={dog.life_span}
+                name={dog.name}
+                temperament={dog.temperament}
+                weight={dog.weight.metric}
+              />
+            );
+          })}
+      </section>
+      <section className="section-pagination">
+        <Pagination page={page} setPage={setPage} maxPages={maxPages} />
+      </section>
     </>
   );
 }

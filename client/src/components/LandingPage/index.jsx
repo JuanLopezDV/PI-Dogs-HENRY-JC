@@ -33,7 +33,7 @@ function LandingPage() {
             </li>
           </ul>
           <figure className="nav-menu">
-            <MenuIcon className="menu-icon" fill="#fff" />
+            <MenuIcon className="menu-icon" fill="#853b46" />
           </figure>
         </nav>
 
@@ -56,9 +56,8 @@ function LandingPage() {
             <img src={dogPuppy} alt="beagle dog puppy" className="hero-image" />
           </figure>
         </section>
-        <Wave className="hero-waves" fill="#f3b800" />
+        <Wave className="hero-waves" fill="#853b46" />
       </header>
-      <Huella className="huella" />
     </>
   );
 }

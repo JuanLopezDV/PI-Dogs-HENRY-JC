@@ -9,7 +9,7 @@ const server = express();
 
 require("./db/db.js");
 
-server.name = "API";
+// server.name = "API";
 
 // const whiteList = ["http://localhost:3002", "http://localhost:8080"];
 // const options = {

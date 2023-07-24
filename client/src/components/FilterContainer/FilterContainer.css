@@ -1,40 +1,47 @@
 .Container-wrapper {
   display: flex;
-  height: 500px;
-  width: 300px;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
 
 .Container-dropdown {
-  width: 300px;
+  width: 100%;
 }
 
 .Container-type {
-  background-color: antiquewhite;
+  background-color: #eae5de;
   margin-bottom: 5px;
-  padding: 10px 20px;
+  padding: 5px 10px;
 }
 
 .Container-type-tittle {
-  color: blue;
+  color: #7e3a42;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  font-size: 0.8rem;
 }
 
 .Container-type-content {
-  color: blueviolet;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  flex-grow: 1;
 }
 
 .Container-type-content--show {
-  height: auto;
-  max-height: 400px;
-  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
-  overflow-x: hidden;
+  border-top: 2px solid;
+  padding-top: 10px;
+  max-height: 800px;
   overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.icon {
+  fill: #7e3a42;
+  width: 0.8rem;
+  height: 0.8rem;
 }

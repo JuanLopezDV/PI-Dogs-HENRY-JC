@@ -4,6 +4,7 @@ const getAllApiDogs = async (url, query) => {
   const { data } = query.name
     ? await axios.get(`${url}/search?q=${query.name}`)
     : await axios.get(url);
+
   const dogsAPI = data.map((dog) => {
     return {
       id: dog.id,
@@ -15,6 +16,7 @@ const getAllApiDogs = async (url, query) => {
       temperament: dog.temperament,
     };
   });
+
   return dogsAPI;
 };
 

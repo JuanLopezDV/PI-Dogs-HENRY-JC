@@ -1,13 +1,17 @@
+* {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  width: 100%;
   color: #1e1e1f;
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  position: relative;
 }
 
 #root {
+  width: 100%;
   margin: 0;
   padding: 0;
   position: static;

@@ -1,0 +1,29 @@
+.main {
+  background-color: #f5f3ee;
+  color: #853b46;
+  padding-bottom: 7rem;
+}
+
+.main-section {
+  display: grid;
+  grid-template-columns: 22% calc(78% - 5px);
+  gap: 5px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+  height: 3rem;
+}
+
+.section-filter {
+  padding: 5px;
+}
+
+.section-dogs-page {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,19 @@
+.btn-styles {
+  border: 2px solid #f5f3ee;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 100vmax;
+  font-weight: 600;
+}
+
+.btn-styles--active {
+  background-color: #7e3a42;
+  color: #f5f3ee;
+}
+
+.btn-styles--normal {
+  background-color: #f5f3ee;
+  color: #7e3a42;
+}

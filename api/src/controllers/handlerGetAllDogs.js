@@ -10,7 +10,6 @@ const handlerGetAllDogs = async (req, res) => {
     const dogsAPI = await getAllApiDogs(URL_API, { name });
 
     const dogsDb = await getAllDbDogs(name);
-
     if (name && !(dogsAPI.length + dogsDb.length)) {
       throw new Error(
         `No se encontró ningún perro con nombre similar a "${name}"`
