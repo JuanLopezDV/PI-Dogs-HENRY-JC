@@ -95,3 +95,9 @@
 .dog-card .back .link a {
   color: #f3f3f3;
 }
+
+.face-back-temperament {
+  display: flex;
+  height: 6rem;
+  overflow-y: auto;
+}

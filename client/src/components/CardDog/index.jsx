@@ -22,7 +22,9 @@ function CardDog({ id, height, image, life_span, name, temperament, weight }) {
           <p>Años de vida: {life_span}</p>
           <p>Peso: {weight} kg</p>
           <p>Temperamentos:</p>
-          <p>{temperament}</p>
+          <div className="face-back-temperament">
+            <p>{temperament}</p>
+          </div>
         </div>
         <div className="link">
           <Link to={`/detail/${id}`} relative="route">

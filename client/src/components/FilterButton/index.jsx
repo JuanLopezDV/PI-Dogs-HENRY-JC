@@ -6,9 +6,13 @@ import { filterDogs } from "../../redux/actions";
 const uuidRegex =
   /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
 
-function FilterButton(props) {
-  const [isToggled, setIsToggled] = React.useState(false);
-
+function FilterButton({
+  name,
+  source,
+  activeIndices,
+  buttonIndex,
+  setActiveIndices,
+}) {
   const dispatch = useDispatch();
   const dogs = useSelector((state) => state.filteredDogs);
 
@@ -24,20 +28,26 @@ function FilterButton(props) {
   const onClick = (source, name) => {
     const dogsFilter = filterTypes[source](name);
     dispatch(filterDogs(dogsFilter));
-    setIsToggled(!isToggled);
+    if (activeIndices.some((e) => e.source === buttonIndex)) {
+      setActiveIndices(activeIndices.filter((e) => e.source !== buttonIndex)); // Desactivar el botón si ya estaba activo
+    } else {
+      setActiveIndices([...activeIndices, { source: buttonIndex }]); // Activar el botón si no estaba activo
+    }
   };
 
   return (
     <>
       <button
         className={`${btnStyles["btn-styles"]} ${
-          isToggled
+          activeIndices.some((e) => e.source === buttonIndex)
             ? btnStyles["btn-styles--active"]
             : btnStyles["btn-styles--normal"]
         }`}
-        onClick={() => onClick(props.source, props.name)}
+        onClick={() => {
+          onClick(source, name);
+        }}
       >
-        {props.name}
+        {name}
       </button>
     </>
   );

@@ -1,18 +1,16 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { FilterButton } from "../FilterButton";
 import { ReactComponent as ArrowUp } from "../../assets/svg/arrow-up.svg";
 import { ReactComponent as ArrowDown } from "../../assets/svg/arrow-down.svg";
 import "./FilterContainer.css";
-
-//! ojo testeo
-import { temps } from "../../testing-obj";
+import { addDogs } from "../../redux/actions";
 
 function FilterContainer() {
+  const dispatch = useDispatch();
   const [selected, setSelected] = React.useState(null);
-  // const temperaments = useSelector((state) => state.allTemperaments); !!OJO example
-  const temperaments = temps;
-  console.log(temperaments);
+  const [activeIndices, setActiveIndices] = React.useState([]);
+  const temperaments = useSelector((state) => state.allTemperaments);
 
   const fuentePerros = [
     { id: 1, name: "API externa" },
@@ -32,9 +30,22 @@ function FilterContainer() {
     }
   };
 
+  const restoreFilters = () => {
+    dispatch(addDogs());
+  };
+
   return (
     <div className="Container Container-wrapper">
       <div className="Container-dropdown">
+        <p
+          onClick={() => {
+            restoreFilters();
+            setActiveIndices([]);
+          }}
+          className="Container-clean-filters"
+        >
+          Limpiar filtros
+        </p>
         {filters.map((type, i) => (
           <div key={type.source} className="Container-type">
             <div className="Container-type-tittle" onClick={() => toggle(i)}>
@@ -54,11 +65,14 @@ function FilterContainer() {
                   : "Container-type-content"
               }
             >
-              {type.content.map((source) => (
+              {type.content.map((source, index) => (
                 <FilterButton
                   key={source.id}
                   name={source.name}
                   source={type.source}
+                  activeIndices={activeIndices}
+                  buttonIndex={index}
+                  setActiveIndices={setActiveIndices}
                 />
               ))}
             </div>

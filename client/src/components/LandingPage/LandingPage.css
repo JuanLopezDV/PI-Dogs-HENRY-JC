@@ -152,11 +152,3 @@
     margin: 0 auto;
   }
 }
-
-.huella {
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  top: 1%;
-  z-index: 1;
-}

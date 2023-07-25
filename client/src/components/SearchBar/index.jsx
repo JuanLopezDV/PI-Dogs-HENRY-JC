@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { searchDogs } from "../../redux/actions";
+import { ReactComponent as SearchIcon } from "../../assets/svg/search-icon.svg";
 import searchStyles from "./SearchBar.module.css";
-import { ReactComponent as SearchIcon } from "../../assets/svg/search-paw-icon.svg";
 
 function SearchBar() {
   const [raza, setRaza] = React.useState("");
@@ -29,7 +29,7 @@ function SearchBar() {
         className={searchStyles["search-btn"]}
         onClick={() => onSearch(raza)}
       >
-        {/* <SearchIcon /> */}B
+        <SearchIcon className={searchStyles["search-icon"]} />
       </button>
     </div>
   );

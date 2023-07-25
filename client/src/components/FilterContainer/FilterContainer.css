@@ -45,3 +45,14 @@
   width: 0.8rem;
   height: 0.8rem;
 }
+
+.Container-clean-filters {
+  font-size: 1.2rem;
+  text-decoration: underline;
+  margin: 0 0 0.5rem 0.5rem;
+  cursor: pointer;
+}
+
+.Container-clean-filters:hover {
+  color: #f98223;
+}

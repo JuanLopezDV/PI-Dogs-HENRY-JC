@@ -35,4 +35,13 @@
   border-radius: 0 100vh 100vh 0;
   cursor: pointer;
   font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-icon {
+  fill: #eae5de;
+  width: 1.5rem;
+  height: 1.5rem;
 }

@@ -4,7 +4,6 @@ import dogPuppy from "../../assets/images/puppy-dog.webp";
 import { ReactComponent as Wave } from "../../assets/svg/waves-lp.svg";
 import { ReactComponent as MenuIcon } from "../../assets/svg/icon-menu.svg";
 import { ReactComponent as FigureDog } from "../../assets/svg/figure-dog.svg";
-import { ReactComponent as Huella } from "../../assets/svg/huella.svg";
 import "./LandingPage.css";
 
 function LandingPage() {

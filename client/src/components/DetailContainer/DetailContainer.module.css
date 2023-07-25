@@ -1,0 +1,13 @@
+.detail-prop-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #7e3a42;
+  min-width: 10rem;
+  max-width: 15rem;
+  width: 30%;
+  background-color: #cfcbc4d0;
+  border-radius: 10px;
+  margin: 0.3rem 0 0.5rem 0;
+  font-size: 1.1rem;
+}

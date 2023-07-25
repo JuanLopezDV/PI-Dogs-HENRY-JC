@@ -9,12 +9,9 @@ import { OrderBy } from "../OrderBy";
 import { CardDogLoading } from "../CardDogLoading";
 import HomeStyles from "./Home.module.css";
 
-//!Testing objects
-import { dogs } from "../../testing-obj";
-
 function Home() {
   const dispatch = useDispatch();
-  // !const dogs = useSelector((state) => state.filteredDogs); !!Pruebas
+  const dogs = useSelector((state) => state.filteredDogs);
 
   React.useEffect(() => {
     dispatch(addDogs());
