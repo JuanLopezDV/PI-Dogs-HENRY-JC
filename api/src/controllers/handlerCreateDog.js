@@ -2,7 +2,8 @@ const { Dog } = require("../db/db");
 
 const handlerCreateDog = async (req, res) => {
   try {
-    const { name, image, height, weight, lifeSpan, temperament } = req.body;
+    const { name, image, height, weight, lifeSpan, temperament, price } =
+      req.body;
 
     if (!name || !height || !weight || !lifeSpan || !temperament) {
       throw new Error("Faltan datos para la creacion");
@@ -14,6 +15,7 @@ const handlerCreateDog = async (req, res) => {
       height,
       weight,
       life_span: lifeSpan,
+      price: price,
     });
 
     newDog.addTemperament(temperament); //temperament es un array de id de temperaments ei: [6,8,9,2]

@@ -1,14 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ReactComponent as Logo } from "../../assets/svg/logo.svg";
 import NavStyles from "./Nav.module.css";
 
 function Nav() {
   return (
     <header className={NavStyles["header"]}>
       <nav className={`${NavStyles["nav"]} ${NavStyles["container"]}`}>
-        <h2 className={NavStyles["nav-logo"]}>
-          <Link to={"/"}>App Dog Logo</Link>
-        </h2>
+        <div className={NavStyles["nav-logo"]}>
+          <Link to={"/"}>
+            <Logo className={NavStyles["nav-logo-svg"]} />
+          </Link>
+          <h2 className={NavStyles["nav-logo-title"]}>
+            <Link to={"/"}>Dogs API</Link>
+          </h2>
+        </div>
         <ul className={NavStyles["nav-list"]}>
           <li>
             <Link to={"/home"} className={NavStyles["nav-link"]}>

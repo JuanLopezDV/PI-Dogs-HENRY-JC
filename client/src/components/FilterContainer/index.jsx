@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { FilterButton } from "../FilterButton";
 import { ReactComponent as ArrowUp } from "../../assets/svg/arrow-up.svg";
 import { ReactComponent as ArrowDown } from "../../assets/svg/arrow-down.svg";
+import { clearFilters } from "../../redux/actions";
 import "./FilterContainer.css";
-import { addDogs } from "../../redux/actions";
 
 function FilterContainer() {
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ function FilterContainer() {
   };
 
   const restoreFilters = () => {
-    dispatch(addDogs());
+    dispatch(clearFilters());
   };
 
   return (

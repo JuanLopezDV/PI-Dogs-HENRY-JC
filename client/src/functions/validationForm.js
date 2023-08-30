@@ -15,6 +15,9 @@ const validation = (object) => {
   // Name
   if (!object.name) {
     errors.name = "Digite un nombre para la raza";
+  } else if (object.name.length > 30) {
+    console.log(object.name);
+    errors.name = "El nombre de la raza no puede contener más de 30 caracteres";
   } else {
     delete errors?.name;
   }

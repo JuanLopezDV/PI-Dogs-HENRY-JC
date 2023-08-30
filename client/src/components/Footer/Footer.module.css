@@ -1,9 +1,64 @@
-.footer {
+.container-footer {
   background-color: #853b46;
   color: #f5f3ee;
   position: absolute;
   bottom: 0;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+}
+
+.container-footer a {
+  text-decoration: none;
+  color: #f5f3ee;
+}
+
+.container-footer-ul {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  list-style: none;
+}
+
+.container-footer-ul li {
+  display: flex;
+  height: 2rem;
+}
+
+.container-footer-ul-title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.container-footer-ul-title img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.ul-li-svg {
+  background-color: #f5f3ee;
+  border-radius: 100vh;
+  fill: #853b46;
+  margin: 0;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0.5rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-property: width, height, fill;
+  transition-duration: 0.3s;
+}
+
+.ul-li-svg svg:hover {
+  fill: #f98223;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.ul-li-svg svg {
+  width: 1.5rem;
+  height: 1.5rem;
 }

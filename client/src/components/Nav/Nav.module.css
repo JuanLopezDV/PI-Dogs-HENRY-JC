@@ -26,6 +26,14 @@
 }
 
 .nav-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-logo h2 {
+  margin: 0;
   font-size: 1.3rem;
   font-weight: 600;
 }
@@ -33,7 +41,6 @@
 .nav-logo a {
   text-decoration: none;
   color: #f5f3ee;
-  font-size: 1.3rem;
 }
 
 .nav-list {
@@ -55,4 +62,11 @@
   color: #7b3a43;
   background-color: #f5f3ee;
   transition: background-color 100ms linear;
+}
+
+.nav-logo-svg {
+  width: 68px;
+  height: 68px;
+  margin-right: 0.5rem;
+  fill: #f5f3ee;
 }

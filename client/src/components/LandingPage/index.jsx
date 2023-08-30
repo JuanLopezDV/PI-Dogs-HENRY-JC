@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import dogPuppy from "../../assets/images/puppy-dog.webp";
 import { ReactComponent as Wave } from "../../assets/svg/waves-lp.svg";
+import { ReactComponent as Logo } from "../../assets/svg/logo.svg";
 import { ReactComponent as MenuIcon } from "../../assets/svg/icon-menu.svg";
 import { ReactComponent as FigureDog } from "../../assets/svg/figure-dog.svg";
 import "./LandingPage.css";
@@ -17,17 +18,16 @@ function LandingPage() {
     <>
       <header className="hero">
         <nav className="nav container">
-          <h2 className="nav-logo"> App Dog Logo</h2>
+          <h2 className="nav-logo">
+            {" "}
+            <Logo className="nav-logo-svg" />
+            Dogs API
+          </h2>
 
           <ul className="nav-list">
             <li className="nav-item">
               <a href="#" className="nav-link">
                 Acerca de
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#" className="nav-link">
-                Contacto
               </a>
             </li>
           </ul>

@@ -38,6 +38,10 @@ module.exports = (database) => {
           this.setDataValue("life_span", `${value} years`);
         },
       },
+      price: {
+        type: DataTypes.STRING(30),
+        defaultValue: "0",
+      },
     },
     {
       timestamps: false,
