@@ -11,18 +11,16 @@ require("./db/db.js");
 
 server.name = "API";
 
-// const whiteList = ["http://localhost:3002", "http://localhost:8080"];
-// const options = {
-//   origin: (origin, callback) => {
-//     if (whiteList.includes(origin)) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error("No permitido"));
-//     }
-//   },
-// };
-
-// server.use(cors(options));
+const whiteList = ["https://pi-dogsv1.juancalopez.dev"];
+const options = {
+  origin: (origin, callback) => {
+    if (whiteList.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("No permitido"));
+    }
+  },
+};
 
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 server.use(bodyParser.json({ limit: "50mb" }));
@@ -38,6 +36,8 @@ server.use((req, res, next) => {
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   next();
 });
+
+server.use(cors(options));
 
 server.use(express.json());
 
