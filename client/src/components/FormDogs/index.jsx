@@ -1,9 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React from "react";
 import axios from "axios";
+import FormDogsStyles from "./FormDogs.module.css";
+import DoggyDefault from "../../assets/images/doggy_default.webp";
 import { validation } from "../../functions/validationForm";
 import { useDispatch, useSelector } from "react-redux";
 import { FormButton } from "../FormButton";
-import FormDogsStyles from "./FormDogs.module.css";
 import { Modal } from "../Modal";
 import { CreatedDog } from "../CreatedDog";
 import { addTemperaments } from "../../redux/actions";
@@ -72,9 +75,7 @@ function FormDogs() {
         const endpoint = `${process.env.REACT_APP_API_URL}/dogs`;
         const formDog = {
           name: newDog.name,
-          image:
-            newDog.image ||
-            "https://pawzvistas.com/cdn/shop/files/ezgif.com-webp-to-png_18.webp",
+          image: newDog.image || DoggyDefault,
           height: {
             metric: `${newDog.minHeight} - ${newDog.maxHeight}`,
           },
@@ -101,13 +102,7 @@ function FormDogs() {
     <>
       <section className={FormDogsStyles["container-form"]}>
         <div className={FormDogsStyles["container-preview-image"]}>
-          <img
-            src={
-              newDog.image ||
-              "https://pawzvistas.com/cdn/shop/files/ezgif.com-webp-to-png_18.webp"
-            }
-            alt="Preview"
-          />
+          <img src={newDog.image || DoggyDefault} alt="Preview" />
         </div>
 
         <div className={FormDogsStyles["continer-form-dog"]}>

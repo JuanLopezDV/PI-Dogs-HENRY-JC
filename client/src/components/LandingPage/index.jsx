@@ -1,17 +1,25 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import dogPuppy from "../../assets/images/puppy-dog.webp";
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as Wave } from "../../assets/svg/waves-lp.svg";
 import { ReactComponent as Logo } from "../../assets/svg/logo.svg";
 import { ReactComponent as MenuIcon } from "../../assets/svg/icon-menu.svg";
 import { ReactComponent as FigureDog } from "../../assets/svg/figure-dog.svg";
+import { Modal } from "../Modal";
+import AboutMe from "../AboutMe";
 import "./LandingPage.css";
 
 function LandingPage() {
   const navigate = useNavigate();
 
+  const [openModal, setOpenModal] = React.useState(false);
+
   const onClick = () => {
     navigate("/home");
+  };
+
+  const onModla = () => {
+    setOpenModal(true);
   };
 
   return (
@@ -26,9 +34,9 @@ function LandingPage() {
 
           <ul className="nav-list">
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <span onClick={onModla} className="nav-link">
                 Acerca de
-              </a>
+              </span>
             </li>
           </ul>
           <figure className="nav-menu">
@@ -57,6 +65,12 @@ function LandingPage() {
         </section>
         <Wave className="hero-waves" fill="#853b46" />
       </header>
+
+      {openModal && (
+        <Modal>
+          <AboutMe setOpenModal={setOpenModal} />
+        </Modal>
+      )}
     </>
   );
 }

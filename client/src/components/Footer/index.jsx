@@ -45,7 +45,7 @@ function Footer() {
             </p>
           </Link>
           <Link
-            to="https://www.linkedin.com/in/juan-lopez-/"
+            to="https://www.linkedin.com/in/juanlopez96/"
             target="_blank"
             rel="noopener noreferrer"
           >
